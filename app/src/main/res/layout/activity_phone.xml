@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneActivity">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:text="Login"
+        android:gravity="center_horizontal"
+        android:textColor="#080117"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:textAllCaps="true"
+        android:layout_marginTop="80dp"
+        />
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginRight="29dp"
+        android:hint="Enter Phone Number"
+        android:textColorHint="#858487"
+        android:inputType="number"
+        android:gravity="center"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_phone_number"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:text="Login"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:id="@+id/button3"/>
+
+</RelativeLayout>

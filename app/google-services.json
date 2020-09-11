@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "814599384070",
+    "firebase_url": "https://newcovidtracker.firebaseio.com",
+    "project_id": "newcovidtracker",
+    "storage_bucket": "newcovidtracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814599384070:android:73ebf72080bdfd077fe787",
+        "android_client_info": {
+          "package_name": "com.example.newcovidtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814599384070-plqjjs2ick5s9hihl785lopctbppai93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newcovidtracker",
+            "certificate_hash": "504c6ac537543716aca444bdbdf20983c95ef1eb"
+          }
+        },
+        {
+          "client_id": "814599384070-n86ia3l4i5354kvpmgcj0ro507gmhgl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKZ3qehHjT5YrUwxyPGH0LP6SHDCYvX1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814599384070-n86ia3l4i5354kvpmgcj0ro507gmhgl3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
