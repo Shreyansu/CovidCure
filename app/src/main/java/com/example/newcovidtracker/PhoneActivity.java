@@ -10,6 +10,10 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+
+import java.util.List;
+import java.util.Objects;
 
 public class PhoneActivity extends AppCompatActivity {
 
@@ -51,14 +55,22 @@ public class PhoneActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null)
-        {
-            Intent intent = new Intent(this, NewActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            intent.putExtra("type", "User");
-            startActivity(intent);
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            List<? extends UserInfo> pd = user.getProviderData();
+            UserInfo providerData = pd.get(1);
+            String pid = providerData.getProviderId();
+            if (Objects.equals(pid, "password")) {
+                Intent intent = new Intent(this, NewActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("type", "Admin");
+                startActivity(intent);
+            } else if (Objects.equals(pid, "phone")) {
+                Intent intent = new Intent(this, NewActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("type", "User");
+                startActivity(intent);
+            }
         }
     }
 }
