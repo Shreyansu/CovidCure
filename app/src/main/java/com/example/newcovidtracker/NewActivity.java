@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,7 +41,6 @@ public class NewActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     Integer total;
     NavigationView navigationView;
-
     HashMap<String,Object> map;
 
 
@@ -50,7 +50,7 @@ public class NewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nav_drawer);
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer);
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
         navigationView=findViewById(R.id.nav_view);
         Menu menu =navigationView.getMenu();
 
@@ -85,8 +85,6 @@ public class NewActivity extends AppCompatActivity {
                     namet.setText(String.valueOf(map.get("name")));
                 }
 
-
-
             }
 
             @Override
@@ -104,8 +102,50 @@ public class NewActivity extends AppCompatActivity {
                     case R.id.faq:
                         startActivity(new Intent(NewActivity.this,faqActivity.class));
                         break;
+
+                    case R.id.developer:
+                        startActivity(new Intent(NewActivity.this,DevloperActivity.class));
+                        break;
+
+                    case R.id.edit_profile:
+                        startActivity(new Intent(NewActivity.this,RegisterActivity.class));
+                        break;
+
+                    case R.id.ad_admin:
+                        startActivity(new Intent(NewActivity.this,AddAdminActivity.class));
+                        break;
+
+                    case R.id.ad_dash:
+                        startActivity(new Intent(NewActivity.this,AdminDashBoard.class));
+                        break;
+
+                    case R.id.logout:
+                        FirebaseAuth.getInstance().signOut();
+
+                        Intent intent = new Intent(NewActivity.this, PhoneActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        break;
                 }
                 return false;
+            }
+        });
+        card1=findViewById(R.id.cardview1);
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(NewActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        card2=findViewById(R.id.cardview2);
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewActivity.this,GeoFenceActivity.class);
+                startActivity(intent);
             }
         });
 

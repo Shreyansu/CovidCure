@@ -87,6 +87,47 @@ public class RegisterActivity extends AppCompatActivity {
         });
         updateData();
 
+        findViewById(R.id.save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String namet = name.getText().toString();
+                String aget = age.getText().toString();
+                String phonet = phone.getText().toString();
+                String addresst = address.getText().toString();
+                if (namet.isEmpty() || aget.isEmpty() || phonet.isEmpty() || addresst.isEmpty() || gender == 0 || travelStatus == 0) {
+                    final Dialog dialog = new Dialog(RegisterActivity.this);
+                    dialog.setContentView(R.layout.alert_dialog);
+                    TextView back = dialog.findViewById(R.id.proceed);
+                    back.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.show();
+                } else {
+                    Map<String, Object> objectMap = new HashMap<>();
+                    objectMap.put("name", namet);
+                    objectMap.put("age", aget);
+                    objectMap.put("phone", phonet);
+                    objectMap.put("address", addresst);
+                    objectMap.put("gender", gender == 1 ? "M" : "F");
+                    objectMap.put("travelled", travelStatus == 1);
+                    objectMap.put("quarantineStatus", qStatus);
+                    objectMap.put("quarantineType", quartype);
+                    objectMap.put("placesTravelled", places);
+                    String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+                    FirebaseDatabase.getInstance().getReference().child("Users").child(uid).setValue(objectMap);
+
+                    Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.putExtra("type", "User");
+                    startActivity(intent);
+                }
+            }
+        });
+
 
     }
     HashMap<String,Object> map;
@@ -215,44 +256,43 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    public void registerClick(View view) {
-        String namet=name.getText().toString();
-        String aget=age.getText().toString();
-        String phonet=phone.getText().toString();
-        String addresst=address.getText().toString();
-        if(namet.isEmpty() || aget.isEmpty() || phonet.isEmpty() || addresst.isEmpty() || gender==0 || travelStatus==0)
-        {
-            final Dialog dialog =new Dialog(RegisterActivity.this);
-            dialog.setContentView(R.layout.alert_dialog);
-            TextView back=dialog.findViewById(R.id.proceed);
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            dialog.show();
-        }
-        else{
-            Map<String,Object> objectMap = new HashMap<>();
-            objectMap.put("name",name);
-            objectMap.put("age",age);
-            objectMap.put("phone",phone);
-            objectMap.put("address",address);
-            objectMap.put("gender", gender==1 ? "M" : "F");
-            objectMap.put("travelled", travelStatus == 1);
-            objectMap.put("quarantineStatus",qStatus);
-            objectMap.put("quarantineType",quartype);
-            objectMap.put("placesTravelled",places);
-            String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-            FirebaseDatabase.getInstance().getReference().child("Users").child(uid).setValue(objectMap);
-
-            Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            intent.putExtra("type", "User");
-            startActivity(intent);
-        }
-
-    }
+//    public void registerClick(View view) {
+//        String namet=name.getText().toString();
+//        String aget=age.getText().toString();
+//        String phonet=phone.getText().toString();
+//        String addresst=address.getText().toString();
+//        if(namet.isEmpty() || aget.isEmpty() || phonet.isEmpty() || addresst.isEmpty() || gender==0 || travelStatus==0)
+//        {
+//            final Dialog dialog =new Dialog(RegisterActivity.this);
+//            dialog.setContentView(R.layout.alert_dialog);
+//            TextView back=dialog.findViewById(R.id.proceed);
+//            back.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    dialog.dismiss();
+//                }
+//            });
+//            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//            dialog.show();
+//        }
+//        else{
+//            Map<String,Object> objectMap = new HashMap<>();
+//            objectMap.put("name",name);
+//            objectMap.put("age",age);
+//            objectMap.put("phone",phone);
+//            objectMap.put("address",address);
+//            objectMap.put("gender", gender==1 ? "M" : "F");
+//            objectMap.put("travelled", travelStatus == 1);
+//            objectMap.put("quarantineStatus",qStatus);
+//            objectMap.put("quarantineType",quartype);
+//            objectMap.put("placesTravelled",places);
+//            String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+//            FirebaseDatabase.getInstance().getReference().child("Users").child(uid).setValue(objectMap);
+//
+//            Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            intent.putExtra("type", "User");
+//            startActivity(intent);
+//        }
+//    }
 }
