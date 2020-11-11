@@ -30,12 +30,12 @@
         <activity android:name=".NewActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".VerifyPhoneActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".DistrictActivity" />
-        <activity android:name=".DetailIndiaActivity" />
-        <activity android:name=".IndiaActivity" />
-        <activity android:name=".DetailCountryActivity" />
-        <activity android:name=".CountryActivity" />
+        <activity android:name=".Tracker.MainActivity" />
+        <activity android:name=".Tracker.DistrictActivity" />
+        <activity android:name=".Tracker.DetailIndiaActivity" />
+        <activity android:name=".Tracker.IndiaActivity" />
+        <activity android:name=".Tracker.DetailCountryActivity" />
+        <activity android:name=".Tracker.CountryActivity" />
         <activity android:name=".PhoneActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

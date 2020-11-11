@@ -1,4 +1,4 @@
-package com.example.newcovidtracker;
+package com.example.newcovidtracker.Tracker;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newcovidtracker.R;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import org.eazegraph.lib.charts.PieChart;

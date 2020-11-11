@@ -1,4 +1,4 @@
-package com.example.newcovidtracker;
+package com.example.newcovidtracker.Tracker;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +10,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newcovidtracker.R;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import java.util.ArrayList;

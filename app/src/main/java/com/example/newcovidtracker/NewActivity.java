@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.newcovidtracker.Tracker.MainActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +26,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -135,7 +135,7 @@ public class NewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(NewActivity.this,MainActivity.class);
+                Intent intent = new Intent(NewActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

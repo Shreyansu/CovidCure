@@ -1,4 +1,4 @@
-package com.example.newcovidtracker;
+package com.example.newcovidtracker.Tracker;
 
 public class IndiaModel {
     private String active, confirmed, deaths, deltaConfirmed, deltaDeaths, deltaRecovered, lastUpdatedTime, recovered, state;

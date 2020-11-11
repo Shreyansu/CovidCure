@@ -1,4 +1,4 @@
-package com.example.newcovidtracker;
+package com.example.newcovidtracker.Tracker;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.newcovidtracker.R;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goTrackCountries(View view)
     {
-        Intent intent = new Intent(getApplicationContext(),CountryActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CountryActivity.class);
         startActivity(intent);
 
     }
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goTrackIndia(View view)
     {
-        Intent indiaIntent = new Intent(getApplicationContext(),IndiaActivity.class);
+        Intent indiaIntent = new Intent(getApplicationContext(), IndiaActivity.class);
         startActivity(indiaIntent);
     }
 }
