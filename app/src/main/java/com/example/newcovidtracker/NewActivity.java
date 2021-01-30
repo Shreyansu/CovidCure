@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.newcovidtracker.Bed.UserBedActivity;
+import com.example.newcovidtracker.Bed.Welcome;
 import com.example.newcovidtracker.Tracker.MainActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +47,9 @@ public class NewActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         toolbar = findViewById(R.id.toolbar);
@@ -122,7 +126,7 @@ public class NewActivity extends AppCompatActivity {
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
 
-                        Intent intent = new Intent(NewActivity.this, PhoneActivity.class);
+                        Intent intent = new Intent(NewActivity.this, Welcome.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         break;
@@ -146,6 +150,16 @@ public class NewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(NewActivity.this,GeoFenceActivity.class);
                 startActivity(intent);
+            }
+        });
+        card3=findViewById(R.id.cardview3);
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent =new Intent(NewActivity.this, UserBedActivity.class);
+                startActivity(intent);
+
             }
         });
 

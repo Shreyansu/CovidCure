@@ -4,8 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Bed.UserBedActivity"
+          android:theme="@style/Theme.AppCompat.NoActionBar"
+    ></activity>
+        <activity android:name=".Bed.BedActivity" />
+        <activity android:name=".Bed.HospitalRegistration2" />
+        <activity android:name=".Bed.HospitalRegistration" />
+        <activity android:name=".Bed.HospitalBedUpdate" />
+        <activity android:name=".Bed.HospitalLogin" />
+        <activity android:name=".PhoneActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -22,12 +29,14 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".GeoFenceActivity"></activity>
+        <activity android:name=".GeoFenceActivity" />
         <activity android:name=".AdminDashBoard" />
         <activity android:name=".AddAdminActivity" />
         <activity android:name=".DevloperActivity" />
         <activity android:name=".faqActivity" />
-        <activity android:name=".NewActivity" />
+        <activity
+            android:name=".NewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".Tracker.MainActivity" />
@@ -36,7 +45,7 @@
         <activity android:name=".Tracker.IndiaActivity" />
         <activity android:name=".Tracker.DetailCountryActivity" />
         <activity android:name=".Tracker.CountryActivity" />
-        <activity android:name=".PhoneActivity">
+        <activity android:name=".Bed.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

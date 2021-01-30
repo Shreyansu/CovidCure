@@ -174,7 +174,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Help Desk"
+                                android:text="Bed Details"
                                 android:id="@+id/help"
                                 android:textSize="25dp"
                                 android:textStyle="bold"
@@ -184,7 +184,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Click to get your Query resolved."
+                                android:text="Check the availabilty of beds in your nearby hospitals"
                                 android:textStyle="bold"
                                 android:textSize="19dp"
                                 android:textAlignment="center"
